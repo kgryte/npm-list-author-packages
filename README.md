@@ -87,7 +87,7 @@ Options:
   -h,  --help                Print this message.
   -V,  --version             Print the package version.
   -p,  --port port           Registry port. Default: 80.
-       --hostname hostname   Registry hostname. Default: registry.npmjs.org
+       --hostname hostname   Registry hostname. Default: registry.npmjs.org.
 ```
 
 
