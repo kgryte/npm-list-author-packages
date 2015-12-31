@@ -69,8 +69,11 @@ opts.username = args._[ 0 ];
 if ( args.hasOwnProperty( 'port' ) ) {
 	opts.port = args.port;
 }
-if ( args.hostname ) {
-	opts.hostname = args.hostname;
+if ( args.registry ) {
+	opts.registry = args.registry;
+}
+if ( args.protocol ) {
+	opts.protocol = args.protocol;
 }
 
 
