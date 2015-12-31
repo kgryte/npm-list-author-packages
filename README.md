@@ -56,7 +56,7 @@ get();
 // returns [...]
 ```
 
-The method accepts the same `options` as `ls()`.
+The factory method accepts the same `options` as `ls()`.
 
 
 ## Notes
