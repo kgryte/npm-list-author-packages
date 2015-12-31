@@ -34,7 +34,7 @@ function clbk( error, list ) {
 ```
 
 The `function` accepts the following `options`:
-*	__username__: author username (*required*)
+*	__username__: author username (*required*).
 *	__hostname__: registry hostname. Default: `registry.npmjs.org`.
 *	__port__: registry port. Default: `80`.
 
