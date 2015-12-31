@@ -1,0 +1,100 @@
+#!/usr/bin/env node
+'use strict';
+
+// MODULES //
+
+var fs = require( 'fs' );
+var path = require( 'path' );
+var pkginfo = require( 'pkginfo' );
+var parseArgs = require( 'minimist' );
+var notifier = require( 'update-notifier' );
+var opts = require( './opts.json' );
+var list = require( './../lib' );
+
+
+// VARIABLES //
+
+var args;
+var pkg;
+
+
+// INIT //
+
+process.stdout.on( 'error', process.exit );
+
+
+// PACKAGE INFO //
+
+pkg = pkginfo.read( require.main );
+process.title = pkg.package.name;
+
+
+// PACKAGE UPDATES //
+
+notifier( { 'pkg': pkg.package } ).notify();
+
+
+// ARGUMENTS //
+
+args = parseArgs( process.argv.slice( 2 ), opts );
+
+
+// HELP //
+
+function onClose() {
+	process.exit( 1 );
+}
+
+if ( args.help ) {
+	fs.createReadStream( path.join( __dirname, 'usage.txt' ) )
+		.pipe( process.stdout )
+		.on( 'close', onClose );
+    return;
+}
+
+
+// VERSION //
+
+if ( args.version ) {
+	console.log( pkg.package.version );
+	return;
+}
+
+
+// OPTIONS //
+
+opts = {};
+
+opts.username = args._[ 0 ];
+if ( args.hasOwnProperty( 'port' ) ) {
+	opts.port = args.port;
+}
+if ( args.hostname ) {
+	opts.hostname = args.hostname;
+}
+
+
+// LIST //
+
+list( opts, clbk );
+
+/**
+* FUNCTION: clbk( error, data )
+*	Callback invoked upon receiving data.
+*
+* @param {Error|Null} error - error object or null
+* @param {String[]} data - data
+* @returns {Void}
+*/
+function clbk( error, data ) {
+	var len;
+	var i;
+	if ( error ) {
+		throw error;
+	}
+	len = data.length;
+	for ( i = 0; i < len; i++ ) {
+		process.stdout.write( data[ i ] + '\n' );
+	}
+	process.exit( 0 );
+}
