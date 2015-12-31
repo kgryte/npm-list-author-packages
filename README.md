@@ -56,6 +56,8 @@ get();
 // returns [...]
 ```
 
+The method accepts the same `options` as `ls()`.
+
 
 ## Notes
 
