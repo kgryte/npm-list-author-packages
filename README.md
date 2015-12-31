@@ -59,7 +59,7 @@ get();
 
 ## Notes
 
-*	When querying the main registry, the `function` __only__ returns non-scoped public packages (see NPM issue [#8244][https://github.com/npm/npm/issues/8244]).
+*	When querying the main registry, the `function` __only__ returns non-scoped public packages (see NPM issue [#8244](https://github.com/npm/npm/issues/8244)).
 
 
 
