@@ -39,6 +39,30 @@ The `function` accepts the following `options`:
 *	__port__: registry port. Default: `80`.
 
 
+#### ls.factory( options, clbk )
+
+Creates a reusable `function`.
+
+``` javascript
+var get = ls.factory( {'username': '<username>'}, clbk );
+
+get();
+// returns [...]
+
+get();
+// returns [...]
+
+get();
+// returns [...]
+```
+
+
+## Notes
+
+*	When querying the main registry, the `function` __only__ returns non-scoped public packages (see NPM issue [#8244][https://github.com/npm/npm/issues/8244]).
+
+
+
 ## Examples
 
 ``` javascript
