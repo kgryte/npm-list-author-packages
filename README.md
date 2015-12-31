@@ -115,7 +115,7 @@ Options:
 ```
 
 
-## Notes
+### Notes
 
 *	The package list is written to `stdout` as a newline-delimited `string`.
 
