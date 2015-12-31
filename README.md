@@ -18,6 +18,7 @@ $ npm install npm-list-author-packages
 var ls = require( 'npm-list-author-packages' );
 ```
 
+<a name="ls"></a>
 #### ls( options, clbk )
 
 List an author's packages.
@@ -56,7 +57,7 @@ get();
 // returns [...]
 ```
 
-The factory method accepts the same `options` as `ls()`.
+The factory method accepts the same `options` as [`ls()`](#ls).
 
 
 ## Notes
