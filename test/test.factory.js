@@ -9,21 +9,9 @@ var noop = require( '@kgryte/noop' );
 var factory = require( './../lib/factory.js' );
 
 
-// FUNCTIONS //
-
-function getOpts() {
-	var opts = {
-		'username': 'kgryte',
-		'registry': 'registry.npmjs.org',
-		'port': 80,
-		'protocol': 'http'
-	};
-	return opts;
-}
-
-
 // FIXTURES //
 
+var getOpts = require( './fixtures/opts.js' );
 var data = [
 	'beep',
 	'boop'

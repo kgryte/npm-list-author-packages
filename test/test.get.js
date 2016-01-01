@@ -8,22 +8,10 @@ var proxyquire = require( 'proxyquire' );
 var get = require( './../lib/get.js' );
 
 
-// FUNCTIONS //
-
-function getOpts() {
-	var opts = {
-		'username': 'kgryte',
-		'registry': 'registry.npmjs.org',
-		'port': 80,
-		'protocol': 'http'
-	};
-	return opts;
-}
-
-
 // FIXTURES //
 
 var data = require( './fixtures/data.json' );
+var getOpts = require( './fixtures/opts.js' );
 
 
 // TESTS //
