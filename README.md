@@ -31,6 +31,7 @@ function clbk( error, list ) {
 		throw error;
 	}
 	console.log( list );
+	// returns ['<pkg1>','<pkg2>',...]
 }
 ```
 
@@ -96,6 +97,7 @@ function clbk( error, list ) {
 		throw error;
 	}
 	console.log( list );
+	// returns ['<pkg1>','<pkg2>',...]
 }
 ```
 
