@@ -79,6 +79,11 @@ test( 'the function throws if provided a callback argument which is not a functi
 	}
 });
 
+test( 'function returns a function', function test( t ) {
+	t.equal( typeof factory( getOpts(), noop ), 'function', 'returns a function' );
+	t.end();
+});
+
 test( 'function returns a function which returns an error to a provided callback if an error is encountered when fetching a package list', function test( t ) {
 	var factory;
 	var opts;
