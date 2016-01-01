@@ -40,7 +40,7 @@ test( 'function returns an error to a provided callback if an error is encounter
 	}
 
 	function done( error ) {
-		t.ok( error instanceof Error );
+		t.ok( error instanceof Error, 'error instance' );
 		t.equal( error.message, 'beep' );
 		t.end();
 	}
