@@ -57,7 +57,7 @@
   "devDependencies": {
     "@kgryte/noop": "^1.0.0",
     "browserify": "12.x.x",
-    "chai": "^3.4.1",
+    "chai": "3.x.x",
     "codecov.io": "^0.1.5",
     "istanbul": "^0.4.1",
     "jshint": "2.x.x",
