@@ -38,7 +38,7 @@ function clbk( error, list ) {
 The `function` accepts the following `options`:
 *	__username__: author username (*required*).
 *	__registry__: registry. Default: `'registry.npmjs.org'`.
-*	__port__: registry port. Default: `443` (HTTPS` or `80` (HTTP).
+*	__port__: registry port. Default: `443` (HTTPS) or `80` (HTTP).
 * 	__protocol__: registry protocol. Default: `'https'`.
 
 To query an alternative registry, set the relevant options.
