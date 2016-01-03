@@ -72,6 +72,50 @@ test( 'function returns a function', function test( t ) {
 	t.end();
 });
 
+test( 'if a `port` option is not specified and the protocol is `https`, the default port is `443`', function test( t ) {
+	var factory;
+	var opts;
+	var fcn;
+
+	factory = proxyquire( './../lib/factory.js', {
+		'./get.js': get
+	});
+
+	opts = getOpts();
+	opts.protocol = 'https';
+	delete opts.port;
+
+	fcn = factory( opts, noop );
+	fcn();
+
+	function get( opts ) {
+		t.equal( opts.port, 443, 'sets the default port to `443` for HTTPS' );
+		t.end();
+	}
+});
+
+test( 'if a `port` option is not specified and the protocol is `http`, the default port is `80`', function test( t ) {
+	var factory;
+	var opts;
+	var fcn;
+
+	factory = proxyquire( './../lib/factory.js', {
+		'./get.js': get
+	});
+
+	opts = getOpts();
+	opts.protocol = 'http';
+	delete opts.port;
+
+	fcn = factory( opts, noop );
+	fcn();
+
+	function get( opts ) {
+		t.equal( opts.port, 80, 'sets the default port to `80` for HTTP' );
+		t.end();
+	}
+});
+
 test( 'function returns a function which returns an error to a provided callback if an error is encountered when fetching a package list', function test( t ) {
 	var factory;
 	var opts;

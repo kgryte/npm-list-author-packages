@@ -5,7 +5,7 @@ Options:
 
   -h,  --help                Print this message.
   -V,  --version             Print the package version.
-  -p,  --port port           Registry port. Default: 80.
+  -p,  --port port           Registry port. Default: 443 (HTTPS) or 80 (HTTP).
        --registry registry   Registry. Default: 'registry.npmjs.org'.
        --protocol protocol   Registry protocol. Default: 'http'.
 

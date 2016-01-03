@@ -38,8 +38,8 @@ function clbk( error, list ) {
 The `function` accepts the following `options`:
 *	__username__: author username (*required*).
 *	__registry__: registry. Default: `'registry.npmjs.org'`.
-*	__port__: registry port. Default: `80`.
-* 	__protocol__: registry protocol. Default: `'http'`.
+*	__port__: registry port. Default: `443` (HTTPS` or `80` (HTTP).
+* 	__protocol__: registry protocol. Default: `'https'`.
 
 To query an alternative registry, set the relevant options.
 
@@ -47,8 +47,8 @@ To query an alternative registry, set the relevant options.
 var opts = {
 	'username': '<username>',
 	'registry': 'my.favorite.npm/registry',
-	'port': 80,
-	'protocol': 'https'
+	'port': 8080,
+	'protocol': 'http'
 };
 
 ls( opts, clbk );
@@ -63,13 +63,9 @@ Creates a reusable `function`.
 var get = ls.factory( {'username': '<username>'}, clbk );
 
 get();
-// returns [...]
-
 get();
-// returns [...]
-
 get();
-// returns [...]
+// ...
 ```
 
 The factory method accepts the same `options` as [`ls()`](#ls).
@@ -129,7 +125,7 @@ Options:
 
   -h,  --help                Print this message.
   -V,  --version             Print the package version.
-  -p,  --port port           Registry port. Default: 80.
+  -p,  --port port           Registry port. Default: 443 (HTTPS) or 80 (HTTP).
        --registry registry   Registry. Default: 'registry.npmjs.org'.
        --protocol protocol   Registry protocol. Default: 'http'.
 ```
