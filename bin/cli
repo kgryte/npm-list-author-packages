@@ -66,8 +66,8 @@ if ( args.version ) {
 opts = {};
 
 opts.username = args._[ 0 ];
-if ( args.hasOwnProperty( 'port' ) ) {
-	opts.port = args.port;
+if ( args.port ) {
+	opts.port = parseInt( args.port, 10 );
 }
 if ( args.registry ) {
 	opts.registry = args.registry;
